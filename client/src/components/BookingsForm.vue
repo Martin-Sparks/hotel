@@ -30,12 +30,12 @@ export default {
         addBooking(evt){
             evt.preventDefault();
             
-            const booking = {
+            const payload = {
                 name: this.name,
                 email: this.email,
                 booked_in: this.booked_in
             }
-        BookingService.postBooking(booking)
+        BookingService.postBooking(payload)
         .then(res => eventBus.$emit('booking-added', res))    
         }
     }
